@@ -1,4 +1,4 @@
-!(human/Screenshot 2026-04-11 at 1.25.57 AM.png "imageheader")
+[![none](https://github.com/Jensenleung2465/googledrive-server/blob/main/human/Screenshot%202026-04-11%20at%201.25.57%20AM.png?raw=true "none")](https://github.com/Jensenleung2465/googledrive-server/blob/main/human/Screenshot%202026-04-11%20at%201.25.57%20AM.png?raw=true "none")
 # GoogleDrive Clone
 
 Self-hosted Google Drive style file server built with Node.js and SQLite.
