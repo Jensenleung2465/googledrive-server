@@ -1,3 +1,4 @@
+!(human/Screenshot 2026-04-11 at 1.25.57 AM.png "imageheader")
 # GoogleDrive Clone
 
 Self-hosted Google Drive style file server built with Node.js and SQLite.
