@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GoogleDrive Clone</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">GD</div>
+        <div>
+          <div class="brand-title">GoogleDrive Clone</div>
+          <div class="brand-subtitle">Self-hosted file server with AI assistant</div>
+        </div>
+      </div>
+      <div class="top-actions">
+        <input id="searchInput" type="search" placeholder="Search files..." />
+      </div>
+    </header>
+
+    <main class="layout-grid">
+      <section class="sidebar">
+        <div class="card card-sidebar">
+          <div class="card-title">Quick actions</div>
+          <label class="field-label">Upload files</label>
+          <input id="uploadInput" type="file" multiple />
+          <label class="field-label">Folder path</label>
+          <input id="parentPath" type="text" placeholder="e.g. documents/reports" />
+          <button id="uploadButton" class="btn btn-primary">Upload</button>
+        </div>
+
+        <div class="card card-sidebar">
+          <div class="card-title">GitHub upload</div>
+          <input id="repoOwner" type="text" placeholder="GitHub owner" />
+          <input id="repoName" type="text" placeholder="Repository name" />
+          <input id="branchName" type="text" placeholder="Branch (main)" />
+          <select id="uploadMode">
+            <option value="one_by_one">One by one</option>
+            <option value="bulk">Upload up to 100 files</option>
+          </select>
+          <button id="githubUploadButton" class="btn btn-secondary">Upload to GitHub</button>
+          <pre id="githubStatus" class="log-area"></pre>
+        </div>
+
+        <div class="card card-sidebar">
+          <div class="card-title">Logs</div>
+          <button data-log="fileops.log" class="btn btn-secondary log-button">File Ops</button>
+          <button data-log="ai_chat.log" class="btn btn-secondary log-button">AI Chat</button>
+          <button data-log="ai_read.log" class="btn btn-secondary log-button">AI Read</button>
+          <button data-log="ai_did.log" class="btn btn-secondary log-button">AI Did</button>
+          <pre id="logOutput" class="log-area"></pre>
+        </div>
+      </section>
+
+      <section class="content">
+        <div class="card card-content">
+          <div class="card-title">File browser</div>
+          <div class="breadcrumbs" id="breadcrumbs"></div>
+          <div class="table-wrap">
+            <table class="file-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Type</th>
+                  <th>Size</th>
+                  <th>Modified</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="fileRows"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="aiPanel" class="card card-content hidden">
+          <div class="card-title">AI Assistant</div>
+          <div class="chat-window" id="chatWindow"></div>
+          <textarea id="aiMessage" rows="4" placeholder="Ask the AI to suggest a better file layout..."></textarea>
+          <button id="aiSend" class="btn btn-primary">Send</button>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>
